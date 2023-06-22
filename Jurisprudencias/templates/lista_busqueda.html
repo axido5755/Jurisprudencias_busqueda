@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="my-4"> <!-- Agregamos un contenedor y aplicamos un margen inferior -->
+        <h1 class="text-center">Búsqueda y guardado de Jurisprudencias por: {{Nombre}}</h1>
+      </div>
+
+  <table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Tipo de Causa</th>
+        <th>Rol</th>
+        <th>Nombre del Proyecto</th>
+        <th>Carátula</th>
+        <th>Fecha de Sentencia</th>
+        <th>Descriptores</th>
+        <th>Link de Sentencia</th>
+        <th>URL de Sentencia</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for jurisprudencia in jurisprudencia %}
+        <tr>
+          <td>{{ jurisprudencia.id }}</td>
+          <td>{{ jurisprudencia.tipoCausa }}</td>
+          <td>{{ jurisprudencia.rol }}</td>
+          <td>{{ jurisprudencia.nombreProyecto }}</td>
+          <td>{{ jurisprudencia.caratula }}</td>
+          <td>{{ jurisprudencia.fechaSentencia }}</td>
+          <td>{{ jurisprudencia.descriptores }}</td>
+          <td>{{ jurisprudencia.linkSentencia }}</td>
+          <td>{{ jurisprudencia.urlSentencia }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}
+
+
